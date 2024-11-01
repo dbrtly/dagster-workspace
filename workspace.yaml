@@ -1,0 +1,12 @@
+# What functionality does this file enable?
+# Are there alternatives to enable this functionality?
+
+load_from:
+  - module:
+      relative_path: packages/inventory/src/inventory/definitions.py
+      location_name: inventory
+      executable_path: packages/inventory/.venv/bin/python
+  - python_file:
+      relative_path: packages/sales/src/sales/definitions.py
+      location_name: sales
+      executable_path: packages/sales/.venv/bin/python

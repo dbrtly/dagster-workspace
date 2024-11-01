@@ -1,0 +1,10 @@
+# What functionality does this file enable?
+# Are there alternatives to enable this functionality?
+
+locations :
+  - location_name: inventory
+    code_source:
+      module_name: packages.inventory.src.inventory.definitions
+  - location_name: sales
+    code_source:
+      module_name: packages.sales.src.sales.definitions
