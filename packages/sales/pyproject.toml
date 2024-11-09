@@ -3,8 +3,9 @@ name = "Sales"
 version = "0.1.0"
 description = "Dagster tutorial project for multiple code locations."
 readme = "README.md"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
+    "cowsay==6.1",
     "dagster",
     "dagster-cloud",
 ]

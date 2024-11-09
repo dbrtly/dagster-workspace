@@ -5,6 +5,7 @@ description = "Dagster tutorial project for multiple code locations."
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 dependencies = [
+    "cowsay",
     "dagster",
     "dagster-cloud",
 ]
@@ -12,18 +13,12 @@ dependencies = [
 [dependency-groups]
 dev = ["dagster-webserver", "pytest"]
 
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+# [build-system]
+# do not specify a build system in the workspace.
+# build system is only relevant for applications and libraries. Not Workspaces. 
 
-[tool.dagster]
-modules = [
-    { type = "module", name = "packages.inventory.src.inventory.definitions", code_location_name = "inventory" },
-    { type = "module", name = "packages.sales.src.sales.definitions", code_location_name = "sales" }
-]
-
-[tool.setuptools.packages.find]
-exclude = [
-    "packages.inventory.tests",
-    "packages.sales.tests"
-]
+# [tool.dagster]
+# modules = [
+#     { type = "module", name = "packages.inventory.src.inventory.definitions", code_location_name = "inventory", executable_path = "packages/inventory/.venv/bin/python", working_directory = "packages/inventory" },
+#     { type = "module", name = "packages.sales.src.sales.definitions", code_location_name = "sales", executable_path = "packages/sales/.venv/bin/python", working_directory = "packages/sales" },
+# ]

@@ -3,21 +3,21 @@ import os
 import platform
 
 from dagster import asset
+import cowsay
 
-@asset
+
+@asset(group_name="sales")
 def sales_python_version_check():
     """The Python version here should be different to the Inventory module/package."""
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("data/sales", exist_ok=True)
     python_version = platform.python_version()
-    with open("data/sales_python_version_check.json", "w") as f:
+    with open("data/sales/python_version_check.json", "w") as f:
         json.dump([python_version], f)
 
-@asset
-def sales_data():
-    # Logic to ingest sales data
-    pass
 
-@asset
-def sales_metrics(sales_data):
-    # Logic to calculate sales performance metrics
-    pass
+@asset(group_name="sales")
+def sales_cowsay_version():
+    """Logic to fetch inventory levels."""
+    os.makedirs("data/sales", exist_ok=True)
+    with open("data/sales/cowsay.txt", "w") as f:
+        f.write(cowsay.__version__)

@@ -1,12 +1,12 @@
-# What functionality does this file enable?
-# Are there alternatives to enable this functionality?
+# There are no alternatives to enable this functionality for dagster OSS.
+# These configurations cannot be defined in pyproject.toml
 
 load_from:
-  - module:
-      relative_path: packages/inventory/src/inventory/definitions.py
-      location_name: inventory
+  - python_package: 
       executable_path: packages/inventory/.venv/bin/python
-  - python_file:
-      relative_path: packages/sales/src/sales/definitions.py
-      location_name: sales
+      location_name: inventory
+      package_name: packages.inventory.src.inventory.definitions
+  - python_package: 
       executable_path: packages/sales/.venv/bin/python
+      location_name: sales
+      package_name: packages.sales.src.sales.definitions

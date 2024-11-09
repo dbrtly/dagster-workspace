@@ -136,6 +136,12 @@ wheels = [
 ]
 
 [[package]]
+name = "cowsay"
+version = "5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6b/b8/9f497fd045d74fe21d91cbe8debae0b451229989e35b539d218547d79fc6/cowsay-5.0.tar.gz", hash = "sha256:c00e02444f5bc7332826686bd44d963caabbaba9a804a63153822edce62bbbf3", size = 25760 }
+
+[[package]]
 name = "croniter"
 version = "3.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -500,6 +506,7 @@ name = "inventory"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "cowsay" },
     { name = "dagster" },
     { name = "dagster-cloud" },
 ]
@@ -512,6 +519,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "cowsay", specifier = "==5.0" },
     { name = "dagster" },
     { name = "dagster-cloud" },
     { name = "dagster-webserver", marker = "extra == 'dev'" },

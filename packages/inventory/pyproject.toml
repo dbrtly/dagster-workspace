@@ -5,6 +5,7 @@ description = "Dagster tutorial project for multiple code locations."
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 dependencies = [
+    "cowsay==5.0",
     "dagster",
     "dagster-cloud",
 ]
